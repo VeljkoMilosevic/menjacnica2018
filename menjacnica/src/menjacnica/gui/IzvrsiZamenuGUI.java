@@ -21,6 +21,8 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
 
+import kontroler.GUIKontroler;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -56,7 +58,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IzvrsiZamenuGUI(MenjacnicaGUI glavniProzor, Valuta valuta) {
+	public IzvrsiZamenuGUI( Valuta valuta) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(IzvrsiZamenuGUI.class.getResource("/icons/Screenshot.png")));
 		setTitle("Izvrsi zamenu");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -242,7 +244,7 @@ public class IzvrsiZamenuGUI extends JFrame {
 	private void izvrsiZamenu(){
 		try{
 			double konacniIznos = 
-					glavniProzor.sistem.izvrsiTransakciju(valuta,
+					GUIKontroler.sistem.izvrsiTransakciju(valuta,
 							rdbtnProdaja.isSelected(), 
 							Double.parseDouble(textFieldIznos.getText()));
 		
