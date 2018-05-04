@@ -18,7 +18,7 @@ import menjacnica.gui.models.MenjacnicaTableModel;
 public class GUIKontroler {
 	
 	public static MenjacnicaGUI glavniProzor;
-	public static Menjacnica sistem;
+	public static Menjacnica sistem = new Menjacnica();;
 
 	/**
 	 * Launch the application.
@@ -27,7 +27,6 @@ public class GUIKontroler {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					sistem = new Menjacnica();
 					GUIKontroler.glavniProzor = new MenjacnicaGUI();
 					GUIKontroler.glavniProzor.setVisible(true);
 				} catch (Exception e) {
